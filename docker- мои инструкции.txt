@@ -1,0 +1,40 @@
+Github:
+https://github.com/Dmitry997/DevOps.git
+
+hub.docker.com
+https://hub.docker.com/repository/docker/dmitry997/devops
+
+
+
+Команды докер:
+
+docker images - просмотреть доступные образы
+docker ps - просмотреть запущенные контейнеры
+docker ps -a   просмотреть все контейнеры
+docker stop "имя или номер"  - остановит контейнер
+docker rm "номер"  удалит контейнер
+docker rmi "номер"  удалит image
+
+docker tag imageID dmitry997/devops
+docker push dmitry997/devops  - сохранит в репозиторий devops
+
+
+Вкладываем мой html файл и dockerfile в одну директорию
+докер файл содержит:
+
+FROM nginx
+COPY static-html-directory /usr/share/nginx/html
+
+
+запуск создания имэджа с именем dmitry-image-nginx используя dockerfile из этой же папки:
+docker build -t dmitry-image-nginx .
+
+запуск контейнера с именем some-nginx из имейджа dmitry-image-nginx / -d означает, что работаем бесконечно в фоне:
+$ docker run --name some-nginx -d dmitry-image-nginx
+
+После этого может потребоваться открытие порта для доступа к html  (-p порты которые открыть наша машина:внутри контейнера)
+$ docker run --name dmitry-conteiner-nginx -d -p 8080:80 dmitry-image-nginx
+
+А теперь можно проверить, как это работает:
+http://localhost:8080 or http://host-ip:8080 in your browser.
+
