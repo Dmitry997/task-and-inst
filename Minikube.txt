@@ -1,3 +1,10 @@
+
+Старт (от имени админа в консоли)
+minikube start
+
+Failed to start hyperv VM. Running "minikube delete" may fix it:
+
+
 https://minikube.sigs.k8s.io/docs/start/
 
 https://phoenixnap.com/kb/install-helm
