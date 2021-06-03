@@ -1,0 +1,28 @@
+minikube start 
+minikube stop
+minikube delete - Delete your local cluster:
+
+
+kubectl get po -A  -  просмотреть запущенное
+
+minikube dashboard   - запустить дашборд в браузере 
+
+kubectl get services  - просмотреть запущенные сервисы
+
+minikube addons list   - просмотреть аддоны (установленные и статус запуска)
+
+Create a sample deployment and expose it on port 8080:
+kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.4
+kubectl expose deployment hello-minikube --type=NodePort --port=8080
+
+
+ deployment  =  services
+ 
+ kubectl get services hello-minikube    - увидеть мое развертывание под именем hello-minikube 
+ 
+ Запустить можно 2мя способами:
+ minikube service hello-minikube    - сразу запустит в браузере
+ 
+ kubectl port-forward service/hello-minikube 7080:8080  - пробросит порты, извне доступно по  http://localhost:7080/
+ 
+ 
