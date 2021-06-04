@@ -25,6 +25,7 @@ docker push dmitry997/devops  - сохранит в репозиторий devop
 FROM nginx
 COPY static-html-directory /usr/share/nginx/html
 
+expose 80   - не обязательно (декларируем открыие 80 порта внутри контейнера)
 
 запуск создания имэджа с именем dmitry-image-nginx используя dockerfile из этой же папки:
 docker build -t dmitry-image-nginx .
