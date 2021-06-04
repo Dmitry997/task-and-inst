@@ -15,9 +15,6 @@ docker stop "имя или номер"  - остановит контейнер
 docker rm "номер"  удалит контейнер
 docker rmi "номер"  удалит image
 
-docker tag imageID dmitry997/devops        переименовываем image с номером imageID в dmitry997/devops
-docker push dmitry997/devops  - сохранит в репозиторий devops
-docker run -it -p 8080:80 dmitry997/devops:latest   (сначала попробует запустить локальный имейдж, если не найдет то пойдет в докерхаб и возьмет там dmitry997/devops:latest. -it runs Docker interactively)
 
 
 Вкладываем мой html файл и dockerfile в одну директорию
@@ -25,7 +22,6 @@ docker run -it -p 8080:80 dmitry997/devops:latest   (сначала попроб
 
 FROM nginx
 COPY static-html-directory /usr/share/nginx/html
-
 expose 80   - не обязательно (декларируем открыие 80 порта внутри контейнера)
 
 запуск создания имэджа с именем dmitry-image-nginx используя dockerfile из этой же папки:
@@ -39,4 +35,9 @@ $ docker run --name dmitry-conteiner-nginx -d -p 8080:80 dmitry-image-nginx
 
 А теперь можно проверить, как это работает:
 http://localhost:8080 or http://host-ip:8080 in your browser.
+
+Далее закидываем на докерхаб.
+docker tag imageID dmitry997/devops        переименовываем image с номером imageID в dmitry997/devops
+docker push dmitry997/devops  - сохранит в репозиторий devops
+docker run -it -p 8080:80 dmitry997/devops:latest   (сначала попробует запустить локальный имейдж, если не найдет то пойдет в докерхаб и возьмет там dmitry997/devops:latest. -it runs Docker interactively)
 
