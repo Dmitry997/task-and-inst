@@ -15,7 +15,7 @@ docker stop "имя или номер"  - остановит контейнер
 docker rm "номер"  удалит контейнер
 docker rmi "номер"  удалит image
 
-docker tag imageID dmitry997/devops
+docker tag imageID dmitry997/devops        переименовываем image с номером imageID в dmitry997/devops
 docker push dmitry997/devops  - сохранит в репозиторий devops
 
 
