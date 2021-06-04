@@ -5,6 +5,10 @@ minikube delete - Delete your local cluster:
 
 kubectl get po -A  -  просмотреть запущенное
 
+kubectl get nodes
+kubectl get deploy
+
+
 minikube dashboard   - запустить дашборд в браузере 
 
 kubectl get services  - просмотреть запущенные сервисы
