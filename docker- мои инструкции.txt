@@ -17,6 +17,7 @@ docker rmi "номер"  удалит image
 
 docker tag imageID dmitry997/devops        переименовываем image с номером imageID в dmitry997/devops
 docker push dmitry997/devops  - сохранит в репозиторий devops
+docker run -it -p 8080:80 dmitry997/devops:latest   (сначала попробует запустить локальный имейдж, если не найдет то пойдет в докерхаб и возьмет там dmitry997/devops:latest. -it runs Docker interactively)
 
 
 Вкладываем мой html файл и dockerfile в одну директорию
