@@ -7,11 +7,12 @@ kubectl get po -A  -  просмотреть запущенное
 
 kubectl get nodes
 kubectl get deploy
-
+kubectl get svc - проверить запущенные сервисы
+kubectl get services  - просмотреть запущенные сервисы
 
 minikube dashboard   - запустить дашборд в браузере 
 
-kubectl get services  - просмотреть запущенные сервисы
+
 
 minikube addons list   - просмотреть аддоны (установленные и статус запуска)
 
