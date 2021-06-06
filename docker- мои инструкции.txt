@@ -25,7 +25,7 @@ COPY static-html-directory /usr/share/nginx/html
 expose 80   - не обязательно (декларируем открыие 80 порта внутри контейнера)
 
 запуск создания имэджа с именем dmitry-image-nginx используя dockerfile из этой же папки:
-docker build -t dmitry-image-nginx .
+docker build -t dmitry-image-new-nginx .
 
 запуск контейнера с именем some-nginx из имейджа dmitry-image-nginx / -d означает, что работаем бесконечно в фоне:
 $ docker run --name some-nginx -d dmitry-image-nginx
