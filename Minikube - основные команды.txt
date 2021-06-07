@@ -30,14 +30,17 @@ kubectl delete -f pod-dmitry.yaml -Грохнуть все, что создан�
 Запускаем так же:
 kubectl port-forward pod-dmitry 7080:80 - пробросит порты, извне доступно по  http://localhost:7080/
 
+Подами управляют через deployment, а не на прямую. (дает возможность скалинга, отказоустойчивости и тд.)
+kubectl create deployment deploy-dmitry --image=dmitry997/devops:latest
+kubectl scale deployment deploy-dmitry --replicas 2  (Изменит количество подов на 2 и будет поддерживать в таком состоянии)
 
+Работает с изменением image.
+kubectl rollout history deployment/deploy-dmitry   (выведет историю обновлений)
+kubectl rollout status deployment/deploy-dmitry   (узнать как дела сейчас)
 
+kubectl set image deployment/deploy-dmitry имя_контейнера_деплоймента=dmitry997/devops:version1 --record  (Обновит все Поды и заменит имейджи)
 
-
-
-
-
-
+kubectl rollout restart deployment/deploy-dmitry  (пересоберет деплоймент, удобно если обновил имейдж, но сохранил с темже тагом)
 
 
 
