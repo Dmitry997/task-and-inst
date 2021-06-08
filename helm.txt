@@ -3,8 +3,12 @@ https://helm.sh/  - здесь основная страница проекта.
 
 
 helm list - посмотреть какие деплойменты уже сделаны
-helm delete имя (удалит все деплойменты, сервисы) алиас для delete - uninstall
 
 helm create MyChart  - сделать шаблон файлов чарта в диретории MyChart
 
-helm install app1 MyChart/ - задеплоить Helm Chart App1 из директории MyChart
+helm install app App-HelmChart/   (app - имя под которым деплоим, App-HelmChart/  - путь до папки с chart файлом)
+helm upgrade app App-HelmChart/ --set replicaCount=4   (проапгрейдить деплоймент, изменив значение переменной replicaCount)
+
+
+helm delete app App-HelmChart/    (алиас для delete - uninstall)
+
